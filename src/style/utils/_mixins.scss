@@ -1,0 +1,5 @@
+@mixin spanUnderline {
+  color: $lightBlue;
+  border-bottom: solid 1px $lightBlue;
+  padding: 2px 0;
+}

@@ -1,0 +1,345 @@
+.reg-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background-image: url(../images/bg-cover.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  &__row {
+    display: flex;
+
+    @media (max-width: 670px) {
+      flex-wrap: wrap;
+      width: min-content;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  min-height: 100vh;
+
+  &__head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__logo {
+    padding-bottom: 30px;
+  }
+
+  &__image {
+    width: 190px;
+    height: 40px;
+  }
+
+  &__title {
+    font-family: 'Rubik-Medium-500', sans-serif;
+    font-size: $fSizeTitle;
+    line-height: 28px;
+    color: $white;
+    text-align: center;
+
+    padding-bottom: 55px;
+
+    @media (max-width: 670px) {
+      width: 80%;
+    }
+
+    @media (max-width: 450px) {
+      width: 100%;
+    }
+  }
+
+  &__title span {
+    color: $lightBlue;
+  }
+
+  &__body {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+
+    @media (max-width: 670px) {
+      flex-direction: column;
+    }
+  }
+
+  &__col {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    @media (max-width: 670px) {
+      flex-direction: column;
+      padding-right: 0;
+      padding-bottom: 30px;
+    }
+
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+
+  &__label {
+    position: relative;
+    margin-bottom: 30px;
+
+    @media (max-width: 670px) {
+      padding-right: 0;
+    }
+
+    &:nth-child(2n) {
+      padding-right: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 16px;
+      top: 0;
+      bottom: 0;
+      width: 20px;
+
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    &--name:before {
+      background-image: url(../images/icons/form/form-name.svg);
+    }
+
+    &--country:placeholder {
+      padding-right: 20px;
+      background-color: red;
+    }
+
+    &--country:before {
+      background-image: url(../images/icons/form/form-country.svg);
+    }
+
+    &--password {
+      @media (max-width: 670px) {
+        order: 1;
+      }
+    }
+
+    &--password:before {
+      background-image: url(../images/icons/form/form-password.svg);
+    }
+
+    &--email:filled {
+      background-color: red;
+    }
+
+    &--email:before {
+      background-image: url(../images/icons/form/form-email.svg);
+    }
+
+    &--second-name:before {
+      background-image: url(../images/icons/form/form-surname.svg);
+    }
+
+    &--phone:before {
+      background-image: url(../images/icons/form/form-phone.svg);
+    }
+
+    &--confirm {
+      @media (max-width: 670px) {
+        order: 1;
+      }
+    }
+
+    &--confirm:before {
+      background-image: url(../images/icons/form/form-confirm.svg);
+    }
+  }
+
+  &__input {
+    display: flex;
+    justify-content: center;
+
+    width: 300px;
+    height: 56px;
+
+    background-color: $inputBg;
+
+    font-family: 'Rubik-Light-300', sans-serif;
+    font-size: $fSizeButton;
+    color: $lightGrey;
+    line-height: 23px;
+
+    border: 1px solid $lightGrey;
+    border-radius: 5px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+
+    padding-left: 50px;
+
+    transition: background-color $tranDur;
+
+    &::placeholder {
+      color: $lightGrey;
+      transition: color $tranDur, padding $tranDur, font-size $tranDur, position $tranDur;
+    }
+
+    &:focus::placeholder {
+      color: $lightBlue;
+      padding-top: 11px;
+      font-size: $fSizePlaceholderFocus;
+      transition: position $tranDur;
+      position: absolute;
+    }
+
+    &:focus {
+      background-color: $inputBgFocus;
+      border-color: $lightBlue;
+    }
+
+    &--alert {
+      border: solid 1px red;
+    }
+  }
+
+  &__select {
+    appearance: none;
+
+    background: url(../images/icons/form/form-select-country.svg) 95% / 10% no-repeat $inputBg;
+    background-repeat: no-repeat;
+
+    transition: background $tranDur;
+
+    &:focus {
+      background: url(../images/icons/form/form-select-country-active.svg) 95% / 10% no-repeat $inputBg;
+      background-repeat: no-repeat;
+      background-color: $inputBgFocus;
+    }
+
+    &:hover {
+      cursor: pointer;
+      background-color: $inputBgFocus;
+    }
+  }
+
+  &__select-option {
+    background-color: $white;
+    color: $grey;
+    padding: 10px 0;
+    font-size: $fSizeAgreement;
+  }
+
+  &__agree {
+    width: 300px;
+    height: 56px;
+
+    display: flex;
+    align-items: center;
+
+    @media (max-width: 670px) {
+      justify-content: center;
+      order: 3;
+    }
+  }
+
+  &__agree-check {
+    padding-left: 0;
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+
+    &:checked+.reg-form__agree-label:before {
+      background-color: $lightBlue;
+
+      background-image: url(../images/icons/form/form-checked.svg);
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+
+  &__agree-label {
+    display: flex;
+    align-items: center;
+
+    font-family: 'Rubik-Light-300', sans-serif;
+    font-size: $fSizeAgreement;
+    color: $lightGrey;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    & span {
+      padding: 2px 0;
+      border-bottom: solid 1px transparent;
+      transition: color $tranDur, border $tranDur;
+    }
+
+    & span:hover {
+      transition: $tranDur;
+      @include spanUnderline;
+    }
+
+    &::before {
+      content: '';
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border: 1px solid $lightBlue;
+      background-color: $inputBg;
+      border-radius: 3px;
+      margin-right: 10px;
+
+      transition: background $tranDur;
+    }
+
+  }
+
+  &__login-wrapper {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+
+    position: absolute;
+    bottom: 30px;
+
+    @media (max-width: 670px) {
+      position: relative;
+      padding-bottom: 10px;
+      bottom: 0;
+    }
+  }
+
+  &__login {
+    font-family: 'Rubik-Light-300', sans-serif;
+    color: $lightGrey;
+    line-height: 18px;
+    font-size: $fSizeAgreement;
+
+    & span {
+      padding: 2px 0;
+      border-bottom: solid 1px transparent;
+      transition: color $tranDur, border $tranDur;
+    }
+
+    & span:hover {
+      @include spanUnderline;
+    }
+  }
+}
